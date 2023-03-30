@@ -1,0 +1,326 @@
+$titanium-white: #F0F0F0;
+$burnt-seed: #090909;
+$dark-red: #CB1C18;
+
+@mixin font ($color, $weight, $size) {
+    color: $color;
+    font-weight: $weight;
+    font-size: $size;
+}
+
+@mixin border ($color){
+    border: 4px;
+    border-color: $color;
+    border-style: solid;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: $titanium-white;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h3 {
+    @include font($burnt-seed, 700, 36px);
+    margin-top: 60px;
+    text-transform: uppercase;
+    width: 100%;
+    display:inline-block;
+}
+
+
+.header {
+    height: 105px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo{
+        @include font($burnt-seed, 700, 18px);
+        text-transform: uppercase;
+        width: 80px;
+        display: flex;
+    }
+    
+    a {
+        @include font($burnt-seed, 500, 20px);
+        text-decoration: none;
+        @include border($burnt-seed);
+        padding: 9px 40px 13px 40px;
+    }
+    
+}
+
+.teachers{
+    padding-bottom: 60px;
+    
+    h3{
+        margin: 50px 0 80px 0;
+    }
+
+    p {
+        @include font($burnt-seed, 600, 18px); 
+    }
+
+    .name {
+        text-transform: uppercase;
+        margin: 10px 0;
+    }
+
+    .face-photo {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+    }
+
+    a {
+        @include font($burnt-seed, 600, 20px); 
+        @include border($dark-red);
+        height: 60px;
+        width: 98%;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0 40px 0;
+    }
+
+    .experience{
+        display: flex;
+        flex-direction: row;
+
+        p{
+            margin: 15px 20px 0 0;
+        }
+    }
+    
+    .first-face{
+        position: relative;
+    }
+
+    .first-exp{
+        position: absolute;
+        bottom: -10px;
+        left: 20px;
+        p {
+            color:$titanium-white;
+        }
+    }
+
+    .second-face{
+        position: relative;
+    }
+
+    .second-exp{
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        p {
+            margin-top: 10px; 
+        }
+    }
+
+    .third-face{
+        position: relative;
+    }
+
+    .third-exp{
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+
+        p {
+            color:$titanium-white;
+        }
+    }
+
+    .fourth-face{
+        position: relative;
+    }
+
+    .fourth-exp{
+        position: absolute;
+        bottom: 12px;
+        right: 26px;
+        p {
+            color:$titanium-white;
+        }
+    }
+
+    .fifth-face{
+        position: relative;
+    }
+
+    .fifth-exp{
+        position: absolute;
+        top: 12px;
+        right: 26px;
+        p {
+            margin-top: 10px; 
+        }
+    }
+}
+
+.footer {
+    padding-top: 100px;
+
+    .footer-titles {
+        @include font($burnt-seed, 600, 18px); 
+        text-transform: uppercase;
+    }
+
+    .socials {
+        margin-top: 114px;
+        padding-bottom: 90px;
+
+        .social {
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+
+            img {
+                width: fit-content;
+                margin-left: -6px;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .contacts{
+        display:flex;
+        flex-direction: column;
+        margin-top: -90px;
+
+        p {
+            @include font($burnt-seed, 400, 16px); 
+            margin-top: 15px;
+        }
+    }
+
+    .navigation {
+        margin-top: -90px;
+
+        a {
+            @include font($burnt-seed, 400, 16px); 
+            margin-top: 15px;
+            text-decoration: none;
+            display: block;
+        }
+    }
+}
+
+
+.popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left:0;
+    background-color: rgb(9, 9, 9, 0.6);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+
+    .inner-popup {
+        position: relative;
+        transform: scale(0);
+        transition: all .5s ease;
+        background-color: $dark-red;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    &:target{
+        opacity: 1;
+        visibility: visible;
+        .inner-popup{
+            transform: scale(1);
+        }
+    }
+
+    .cross-ref{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 0;
+        background-color: none;
+    }
+    .cross {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .photo {
+            display: flex;
+            margin-right: 40px;
+            img {
+                height: 440px;
+                width: 305px;
+                object-fit: cover;
+            }
+        }
+
+        .information {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .name-exp{
+                display:flex;
+                flex-direction: column;
+                @include font($titanium-white, 600, 18px);
+                
+                p {
+                    text-transform: uppercase;
+                }
+
+                .experience{
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 20px;
+
+                    p {
+                        text-transform: lowercase;
+                        width: 40px;
+                        margin: 15px 50px 0 0;
+                    }
+                }
+            }
+
+            .info {
+                display:flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                p {
+                    @include font($titanium-white, 400, 16px);
+                    width: 500px;
+                    line-height: 1.45;
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
