@@ -24,8 +24,8 @@ body {
     margin: 0;
 }
 
-.main-img{
-    background: url(/css/images/main-img.png) 0 0/100% no-repeat;
+.main-img {
+    background: url('../images/bg/main-img.png') center/cover no-repeat;
     background-position: center top;
 }
 
@@ -46,19 +46,18 @@ body {
         text-transform: uppercase;
     }
     
-    ul{
+    ul {
         list-style: none;
         width: 800px;
         height: 105px;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     a {
         text-decoration: none;
         font-weight: 500;
-        margin-right: 10px;
         color: $titanium-white;
     }
     
@@ -66,6 +65,7 @@ body {
         width: 155px;
         display: flex;
         align-items: center;
+        justify-content: space-evenly;
     }
     
     .phone-icon {
@@ -76,6 +76,16 @@ body {
         position: absolute;
         top: 90px;
         right: 100px;
+    }
+
+    .menu-a {
+        display: none;
+    }
+
+    .phone-arrow {
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
     }
 }
 
@@ -128,6 +138,12 @@ body {
         bottom: 100px;
         right: 15px;
     }
+
+    .phone {
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
 } 
 
 @mixin people-blocks($top, $left) {
@@ -144,7 +160,7 @@ body {
 }
 
 .second-block{
-    background: url(/css/images/black-bg.png) 0 0/100% no-repeat;
+    background: url('../images/bg/black-bg.png') 0 0/100% no-repeat;
     background-position: center bottom;
 
     img {
@@ -167,7 +183,7 @@ h3 {
 }
 
 .beginners {
-    @include people-blocks(90px, 100px);
+    @include people-blocks(90px, 12%);
 
     p {
         width: 326px;
@@ -179,7 +195,7 @@ h3 {
 }
 
 .amateurs {
-    @include people-blocks(20px, 620px);
+    @include people-blocks(20px, 12%);
 
     p{
         width: 350px;
@@ -191,7 +207,7 @@ h3 {
 }
 
 .professional {
-    @include people-blocks(100px, 200px);
+    @include people-blocks(100px, 24%);
     padding-bottom: 220px;
 
     p{
@@ -219,9 +235,9 @@ h3 {
     }
 }
 
-@mixin skills-blocks {
-    height: 108px;
-    margin-top: 24px;
+@mixin skills-blocks($height: 108px, $margin: 24px) {
+    height: $height;
+    margin-top: $margin;
 }
 
 .skills {
@@ -242,21 +258,31 @@ h3 {
     #second-skill-block {
         color:$titanium-white;
         @include border($burnt-seed);
-        @include skills-blocks;
+        @include skills-blocks(100px);
 
         .second-skill {
             width: 305px;
-            padding: 30px 0 0 44px;
+            padding: 26px 0 0 44px;
         }
     }
     
     #third-skill-block {
         color:$titanium-white;
         @include border($burnt-seed);
-        @include skills-blocks;
+        @include skills-blocks(100px);
 
         .third-skill {
             width: 380px;
+            padding: 26px 0 0 44px;
+        }
+    }
+
+    #fourth-skill-block{
+        background-color: $titanium-white;
+        @include skills-blocks;
+
+        .fourth-skill {
+            width: 350px;
             padding: 30px 0 0 44px;
         }
     }
@@ -294,7 +320,7 @@ h3 {
 
         .fourth-img{
             position: absolute;
-            left: 70px;
+            right: 40px;
             bottom: -140px;
         }
     }
@@ -306,15 +332,18 @@ h3 {
 
     .step-name {
         @include font($burnt-seed, 600, 24px);
+        width: 480px;
         text-transform: uppercase;
-        margin: 0 0 20px 100px;
+        margin-bottom: 20px ;
+        margin-left: 15%;
         position: relative;
     }
 
     .step-description {
         @include font($burnt-seed, 400, 16px);
-        width: 400px;
-        margin: 0 0 30px 188px; 
+        width: 376px;
+        margin-bottom: 30px;
+        margin-left: 25%; 
     }
 
 
@@ -340,9 +369,6 @@ h3 {
     }
 }
 
-
-
-
 @mixin tariffs($margin){
     display: flex;
     flex-direction: row;
@@ -351,15 +377,17 @@ h3 {
 }
 
 .prices {
-    background: url(/css/images/price-bg.png) 0 0/100% no-repeat;
+    background: url('../images/bg/price-bg.png') 0 0/100% no-repeat;
     background-position: center bottom;
 
     position: relative;
 
     .long-photo {
+        height: 340px;
         width: 100%;
+        object-fit: cover;
         position: absolute;
-        bottom: 360px;
+        top: 400px;
         left: 0;
     }
 
@@ -368,15 +396,15 @@ h3 {
     }
 
     .first-tariff {
-        @include tariffs(0 0 35px 100px);
+        @include tariffs(0 0 35px 0);
     }
 
     .third-tariff {
-        @include tariffs(360px 0 35px 500px);
+        @include tariffs(360px 0 35px 0);
     }
 
     .fourth-tariff{
-        @include tariffs(0 0 0 500px);
+        @include tariffs(0);
         padding-bottom: 170px;
     }
     
@@ -410,6 +438,16 @@ h3 {
     .name {
         text-transform: uppercase;
         margin: 10px 0;
+    }
+
+    .extre-name {
+        text-transform: uppercase;
+        margin: 10px 0;
+        display: block;
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .face-photo {
@@ -553,7 +591,7 @@ h3 {
     padding-left: 10%;
     padding-right: 10%;
 
-    background: url(/css/images/main-img.png) 0 0/100% no-repeat;
+    background: url('../images/bg/main-img.png') center/cover no-repeat;
     background-position: center top;
 
     .deformed-smile {
@@ -567,7 +605,6 @@ h4 {
     @include font($titanium-white, 700, 24px);  
     text-transform: uppercase;
     line-height: 1.6;
-    width: 715px; 
     margin-bottom: 60px;
 }
 
@@ -760,6 +797,924 @@ h4 {
             margin-top: 15px;
             text-decoration: none;
             display: block;
+        }
+    }
+
+    .first-phone-smile {
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .second-phone-smile {
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .main-img {
+        .header {
+            ul {
+                width: 640px;
+            }
+        }
+
+        .main-text{
+            h1{
+                @include font($titanium-white, 700, 48px);
+                width: 920px;
+            }
+        }
+
+        .subtitle-text{
+            h2{
+                @include font($titanium-white, 500, 20px);
+                width: 600px;
+            }
+        } 
+
+        .cta{
+
+            a {
+                @include font($titanium-white, 600, 24px);
+                bottom: 175px;
+                right: 90px;
+            }
+
+            img{
+                bottom: 130px;
+                right: 0px;
+            }
+        }
+    }
+    .second-block{
+        img {
+            margin-bottom: 30px;
+        }
+
+        .beginners {
+            @include people-blocks(90px, 0px);
+        }
+
+        .amateurs {
+            @include people-blocks(60px, 0px);
+        }
+
+        .professional {
+            @include people-blocks(100px, 12%);
+        }
+    
+    }
+    .skills {
+        #fourth-skill-block{
+            .fourth-skill {
+                width: 275px;
+            }
+        }
+    }
+    .teachers {
+        .name {
+            width: 178px;
+        }
+    }
+
+    .reviews{
+        .people-rev {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .second-rev{
+            margin-top: -20px;
+            margin-right: -140px;
+            margin-left: 0;
+        }
+
+        .third-rev{
+            margin-top: -20px;
+            margin-left: 0px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .main-img {
+        .header {
+            .menu {
+                display: none;
+            }
+
+            .number {
+
+                .call {
+                    display: none;
+                }
+                .phone-icon {
+                    display: none;
+                }
+                .arrow {
+                    display: none;
+                }
+
+                .menu-a{
+                    display: contents;
+                }
+
+                .phone-arrow{
+                    width: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    position: absolute;
+                    top: 65px;
+                    right: 90px;
+                }
+            }
+        }
+
+        .central-area {
+            height: 500px;
+        }
+
+        .main-text{
+            h1{
+                @include font($titanium-white, 700, 36px);
+                width: 700px;
+            }
+        }
+
+        .subtitle-text{
+            h2{
+                @include font($titanium-white, 500, 20px);
+                width: 600px;
+            }
+        } 
+
+        .cta{
+
+            a {
+                @include font($titanium-white, 600, 24px);
+                bottom: 135px;
+                right: 90px;
+            }
+
+            img{
+                bottom: 90px;
+                right: 0px;
+            }
+        }
+    }
+
+    .second-block{
+        img {
+            margin-bottom: 30px;
+        }
+
+        .beginners {
+            @include people-blocks(80px, 0px);
+
+            .begin-vector {
+                @include people-vectors(-60px, 600px);
+            }
+        }
+
+        .amateurs {
+            @include people-blocks(100px, 30%);
+
+            .amat-vector {
+                @include people-vectors(100px, -240px);
+            }
+        }
+
+        .professional {
+            @include people-blocks(100px, 8%);
+            padding-bottom: 160px;
+
+            .profi-vector {
+                @include people-vectors(70px, 560px);
+            }
+        }
+    
+    }
+
+    .third-title {
+        .smile {
+            position:absolute;
+            top: 10px;
+            right: 20px;
+        }
+    }
+
+    .skills {
+        @include font($burnt-seed, 500, 14px);
+
+        #first-skill-block{
+            .first-skill {
+                width: 350px;
+                padding: 33px 0 0 30px;
+            }
+        }
+    
+        #second-skill-block {
+            .second-skill {
+                width: 260px;
+                padding: 29px 0 0 30px;
+            }
+        }
+        
+        #third-skill-block {    
+            .third-skill {
+                width: 320px;
+                padding: 29px 0 0 30px;
+            }
+        }
+    
+        #fourth-skill-block{
+            .fourth-skill {
+                width: 270px;
+                padding: 33px 0 0 30px;
+            }
+        }
+    }
+
+    .free-lesson {
+        h3 {
+            width: 600px;
+        }
+
+        .step-description {
+            margin-bottom: 100px; 
+        }
+
+        .step {
+            .first-img{
+                width: 100px;
+                top: -440px;
+                left: 350px;
+            }
+    
+            .second-img{
+                bottom: -80px;
+                left: -30px;
+            }
+    
+            .third-img{
+                bottom: -100px;
+                left: 300px;
+            }
+    
+            .fourth-img{
+                width: 400px;
+                right: 200px;
+                bottom: -180px;
+            }
+        }
+
+        .free-lesson-button {
+            margin: 40px 0 100px 0;
+        }
+    }
+
+    .teachers {
+        .experience {
+            img {
+                width: 70px;
+            }
+
+        }
+        .first-exp{
+            bottom: 0px;
+        }
+    }
+
+    .reviews {
+        img {
+            position: absolute;
+            top: -200px;
+            right: 160px;
+        }
+    }
+
+    .contact {
+        h4 {
+            width: 430px;
+        }
+
+        .deformed-smile {
+            width: 100px;
+            top: 150px;
+            left: 70%;
+        }
+    }
+
+    .footer {
+        .nav-title {
+            display:none;
+        }
+        .column {
+            display:none;
+        }
+
+    }
+
+}
+
+@media (max-width: 768px){
+    .main-img {
+        .main-text{
+            h1{
+                @include font($titanium-white, 700, 32px);
+                width: 540px;
+            }
+        }
+        
+        .subtitle-text{
+            h2{
+                @include font($titanium-white, 500, 18px);
+                width: 500px;
+            }
+        } 
+    }
+
+    h3 {
+        @include font($titanium-white, 700, 22px);
+        margin-top: 80px;
+    }
+    
+    .second-block{
+
+
+        p {
+            @include font($titanium-white, 400, 14px);
+            margin: 10px 0 0 0;
+        }
+
+        img {
+            margin-bottom: 10px;
+        }
+
+        .beginners {
+            @include people-blocks(60px, 0px);
+
+            img {
+                width: 215px;
+            }
+
+            p {
+                width: 288px;
+            }
+
+            .begin-vector {
+                @include people-vectors(-110px, 400px);
+                width: 60px;
+            }
+        }
+
+        .amateurs {
+            @include people-blocks(50px, 15%px);
+
+            img {
+                width: 191px;
+            }
+
+            p {
+                width: 266px;
+            }
+
+            .amat-vector {
+                @include people-vectors(76px, -200px);
+                width: 66px;
+            }
+        }
+
+        .professional {
+            @include people-blocks(60px, 0px);
+            padding-bottom: 140px;
+
+            img {
+                width: 222px;
+            }
+
+            p {
+                width: 307px;
+            }
+
+            .profi-vector {
+                @include people-vectors(100px, 380px);
+                width: 60px;
+            }
+        }
+    
+    }
+
+    .third-title {
+        h3 {
+            margin-bottom: 0;
+        }
+
+        .smile {
+            width: 50px;
+            top: 110px;
+            left: 380px;
+        }
+    }
+
+    .skills {
+
+        @include font($burnt-seed, 500, 14px);
+        line-height: 1.5;
+        
+    
+        #first-skill-block{
+            color:$titanium-white;
+            @include border($burnt-seed);
+            @include skills-blocks(72px, 60px);
+            background-color: $dark-red;
+    
+            .first-skill {
+                width: 285px;
+                padding: 15px 0 0 20px;
+            }
+        }
+    
+        #second-skill-block {
+            background-color: $titanium-white;
+            @include skills-blocks(80px, 40px);
+            border: none;
+            color:$burnt-seed;
+    
+            .second-skill {
+                width: 270px;
+                padding: 19px 0 0 20px;
+            }
+        }
+        
+        #third-skill-block {
+            color:$titanium-white;
+            @include border($burnt-seed);
+            @include skills-blocks(72px, 40px);
+    
+            .third-skill {
+                width: 290px;
+                padding: 15px 0 0 20px;
+            }
+        }
+    
+        #fourth-skill-block{
+            background-color: $titanium-white;
+            @include skills-blocks(80px, 40px);
+    
+            .fourth-skill {
+                width: 246px;
+                padding: 19px 0 0 20px;
+            }
+        }
+    }
+
+    .free-lesson{
+        margin-top: 80px;
+    
+        .step {
+    
+            .step-number{
+                top: -70px;
+                left: 20px;
+            }
+    
+            .first-img{
+                width: 80px;
+                top: -420px;
+                left: 200px;
+            }
+    
+            .second-img{
+                width: 200px;
+                bottom: -80px;
+                left: 0px;
+            }
+    
+            .third-img{
+                bottom: -100px;
+                left: 200px;
+            }
+    
+            .fourth-img{
+                width: 400px;
+                right: 100px;
+                bottom: -180px;
+            }
+        }
+    
+        h3 {
+            width: 300px;
+        }
+    
+        .step-name {
+            @include font($burnt-seed, 600, 18px);
+            margin-left: 0;
+        }
+    
+        .step-description {
+            @include font($burnt-seed, 400, 14px);
+            margin-bottom: 160px;
+            margin-left: 15%; 
+        }
+
+        .step1 {
+            .step-name {
+                width: 180px;
+            }
+            .step-description {
+                width: 260px;
+            }
+        }
+
+        .step2 {
+            .step-description {
+                width: 236px;
+            }
+        }
+
+        .step3 {
+            .step-description {
+                width: 286px;
+            }
+        }
+
+        .step4 {
+            .step-description {
+                width: 200px;
+                margin-bottom: 0px;
+            }
+        }
+    
+        .free-lesson-button {
+            width: 98%;
+            @include border($dark-red);
+            height: 70px;
+            padding: 7px 0 0 40px;
+            margin: 70px 0 80px 0;
+            position: relative;
+        
+            a {
+                text-decoration: none;
+                @include font($burnt-seed, 600, 18px); 
+                display: flex;
+                width: 140px;
+                line-height: 2.6;
+                span {
+                    color: $titanium-white;
+
+                }
+            }
+        
+            img {
+                position: absolute;
+                top: 20px;
+                right: 40px;
+            }
+        }
+    
+    }
+
+    .prices {
+        h3 {
+            margin-bottom: 60px;
+        }
+
+        .price-title {
+            width: 360px;
+            @include font($titanium-white, 600, 18px); 
+        }
+
+        .price-value {
+            @include font($dark-red, 700, 26px);
+        }
+
+        img {
+            width: 50px;
+        }
+
+        .first-tariff {
+            @include tariffs(0 0 30px 0);
+        }
+
+        .third-tariff {
+            @include tariffs(230px 0 30px 0);
+        }
+
+        .fourth-tariff{
+            padding-bottom: 120px;
+        }
+
+        .long-photo {
+            height: 280px;
+            top: 250px;
+        }
+    } 
+    .teachers{
+        h3{
+            margin: 50px 0 0 0;
+        }
+    
+        p {
+            @include font($titanium-white, 600, 16px); 
+        }
+        
+        .name {
+            width: 100%;
+            margin: 60px 0 10px 0;
+        }
+
+        .extre-name {
+            margin: 60px 0 10px 0;
+            display: flex;
+            width: 100%;
+            height: auto;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .second-teacher {
+            .name {
+                margin: 0;
+                display: block;
+                width: 0px;
+                height: 0px;
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .teachers-button {
+            @include border($burnt-seed);
+            width: 98%;
+            height: 70px;
+            padding: 7px 0 0 40px;
+            margin: 70px 0 80px 0;
+            position: relative;
+        
+            a {
+                text-decoration: none;
+                @include font($titanium-white, 600, 18px); 
+                display: flex;
+                width: 140px;
+                line-height: 2.6;
+                span {
+                    color: $dark-red;
+
+                }
+            }
+        
+            img {
+                position: absolute;
+                top: 20px;
+                right: 40px;
+            }
+        }
+
+    } 
+    .reviews {
+        h3 {
+           margin: 80px 0 60px 0; 
+        }
+
+        img {
+            width: 130px;
+            top: -120px;
+            right: 80px;
+        }
+
+        p {
+            @include font($burnt-seed, 400, 14px); 
+            @include border($dark-red);
+            width: 265px;
+            padding: 40px 20px 40px 20px;
+            margin-top: -4px;
+        }
+
+        .rev-name{
+            @include font($burnt-seed, 700, 16px);
+            width: 285px;
+            padding: 20px 0 16px 20px;
+        }
+
+        .people-rev {
+            padding-bottom: 80px;
+        }
+    }
+
+    .contact {
+
+        .deformed-smile {
+            width: 0px;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .application {
+            padding-top: 60px;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        h4 {
+            @include font($titanium-white, 700, 16px);  
+            width: 280px;
+            margin-bottom: 80px;
+        }
+
+        .form {
+            input {
+                @include font($titanium-white, 400, 14px); 
+            }
+
+            ::placeholder {
+                @include font($titanium-white, 400, 14px); 
+            }
+        }
+    }
+
+    .footer {
+        position: relative;
+        padding-top: 40px;
+
+        .first-phone-smile {
+            width: auto;
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            top: -50px;
+            right: 15%;
+        }
+
+        .second-phone-smile {
+            width: auto;
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            top: 70px;
+            right: 10%;
+        }
+
+
+        .footer-titles {
+            @include font($titanium-white, 600, 16px);
+
+        }
+
+        .voice-title {
+            display:none;
+        }
+
+        .con-title {
+            order: -1;
+        }
+
+        .socials {
+            margin-top: 190px ;
+            padding-bottom: 50px;
+            .social {
+                align-items: center;
+                margin-bottom: 25px;
+            }
+        }
+
+        .contacts {
+            order: -1;
+            margin-top: -150px;
+            p {
+                @include font($titanium-white, 400, 14px);
+            }
+        }
+    }
+
+}
+
+@media (max-width: 576px){
+    .main-img {
+        .central-area {
+            height: 450px;
+        }
+        
+        .main-text{
+            h1{
+                @include font($titanium-white, 700, 18px);
+                width: 280px;
+            }
+        }
+        
+        .subtitle-text{
+            h2{
+                @include font($titanium-white, 500, 16px);
+                width: 280px;
+            }
+        }
+
+        .cta {
+
+            a {
+                @include font($titanium-white, 500, 17px);
+                bottom: 115px;
+                right: 25px;
+            }
+
+            img {
+                width: 0px;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .phone{
+                width: auto;
+                opacity: 1;
+                visibility: visible;
+                position: absolute;
+                bottom: 80px;
+                // right: 10px;
+            }
+        }
+    }
+
+    .second-block{
+        .beginners {
+            .begin-vector {
+                @include people-vectors(-110px, 250px);
+            }
+        }
+
+        .amateurs {
+            .amat-vector {
+                @include people-vectors(76px, -107px);
+            }
+        }
+
+        .professional {
+            .profi-vector {
+                @include people-vectors(235px, 265px);
+            }
+        }
+    
+    }
+
+    .third-title {
+        .smile {
+            left: 200px;
+        }
+    }
+
+    .free-lesson{    
+        .step {    
+            .first-img{
+                width: 66px;
+            }
+            .second-img{
+                width: 166px;
+                left: 220px;
+                bottom: 60px;
+            }
+            .third-img{
+                width: 70px;
+                bottom: 50px;
+                left: 20px;
+            }
+            .fourth-img{
+                width: 250px;
+                right: 100px;
+                bottom: 90px;
+            }
+        }
+    }
+
+    .prices {
+        .long-photo {
+            top: 270px;
+        }
+    }
+
+    .teachers {
+        .face-photo{
+            width: 300px;
+            height: auto;
+        }
+    }
+
+    .reviews {
+
+
+        img {
+            right: 60px;
+        }
+
+        .people-rev {
+            flex-wrap: wrap;
+            align-content: flex-start;
+
+            .second-rev{
+                margin-right: -30px;
+            }
         }
     }
 }

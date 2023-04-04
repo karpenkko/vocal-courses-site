@@ -44,7 +44,7 @@ h3 {
   display: -ms-flexbox;
   display: flex;
 }
-.header a {
+.header .button {
   color: #090909;
   font-weight: 500;
   font-size: 20px;
@@ -53,6 +53,11 @@ h3 {
   border-color: #090909;
   border-style: solid;
   padding: 9px 40px 13px 40px;
+}
+.header .menu-a {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .teachers {
@@ -72,9 +77,6 @@ h3 {
 }
 .teachers .face-photo {
   width: 100%;
-  height: 480px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .teachers a {
   color: #090909;
@@ -224,6 +226,16 @@ h3 {
   text-decoration: none;
   display: block;
 }
+.footer .first-phone-smile {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+.footer .second-phone-smile {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
 
 .popup {
   display: -webkit-box;
@@ -364,4 +376,133 @@ h3 {
   width: 500px;
   line-height: 1.45;
   margin-top: 15px;
+}
+
+@media (max-width: 1200px) {
+  .teachers .name {
+    width: 178px;
+  }
+}
+@media (max-width: 992px) {
+  .header .back-button .button {
+    display: none;
+  }
+  .header .back-button .menu-a {
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    margin-right: 10px;
+  }
+  .teachers .experience img {
+    width: 70px;
+  }
+  .teachers .first-exp {
+    bottom: 0px;
+  }
+  .teachers .second-exp p {
+    margin-top: 5px;
+  }
+  .teachers .fifth-exp {
+    top: 5px;
+    right: 10px;
+  }
+  .teachers .fifth-exp p {
+    margin-top: 5px;
+  }
+  .footer .nav-title {
+    display: none;
+  }
+  .footer .column {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .teachers h3 {
+    color: #090909;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 40px 0 60px 0;
+  }
+  .teachers p {
+    color: #090909;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .teachers .name {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+  .footer {
+    position: relative;
+    padding-top: 40px;
+  }
+  .footer .first-phone-smile {
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top: -50px;
+    right: 15%;
+  }
+  .footer .second-phone-smile {
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top: 70px;
+    right: 10%;
+  }
+  .footer .footer-titles {
+    color: #090909;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .footer .voice-title {
+    display: none;
+  }
+  .footer .con-title {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .footer .socials {
+    margin-top: 190px;
+    padding-bottom: 50px;
+  }
+  .footer .socials .social {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 25px;
+  }
+  .footer .contacts {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin-top: -150px;
+  }
+  .footer .contacts p {
+    color: #090909;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .teachers .face-photo {
+    width: 300px;
+    height: auto;
+  }
+  .teachers a {
+    width: 292px;
+  }
+  .teachers .fourth-exp {
+    left: 34px;
+  }
+  .teachers .fifth-exp {
+    top: 8px;
+    left: 15px;
+  }
+  .teachers .fifth-exp p {
+    margin-top: 8px;
+  }
 }

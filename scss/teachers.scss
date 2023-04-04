@@ -47,11 +47,17 @@ h3 {
         display: flex;
     }
     
-    a {
+    .button {
         @include font($burnt-seed, 500, 20px);
         text-decoration: none;
         @include border($burnt-seed);
         padding: 9px 40px 13px 40px;
+    }
+
+    .menu-a {
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
     }
     
 }
@@ -74,8 +80,6 @@ h3 {
 
     .face-photo {
         width: 100%;
-        height: 480px;
-        object-fit: cover;
     }
 
     a {
@@ -212,8 +216,19 @@ h3 {
             display: block;
         }
     }
-}
+    
+    .first-phone-smile {
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
 
+    .second-phone-smile {
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 
 .popup{
     display: flex;
@@ -322,5 +337,163 @@ h3 {
 }
 
 
+@media (max-width: 1200px) {
+    .teachers {
+        .name {
+            width: 178px;
+        }
+    }
+}
 
+@media (max-width: 992px) {
+    .header {
+        .back-button{
+            .button {
+                display: none;
+            }
+
+            .menu-a {
+                width: auto;
+                opacity: 1;
+                visibility: visible;
+                margin-right: 10px;
+            }
+            
+        }
+
+    }
+
+    .teachers {
+        .experience {
+            img {
+                width: 70px;
+            }
+    
+        }
+        .first-exp{
+            bottom: 0px;
+        }
+
+        .second-exp{
+            p {
+                margin-top: 5px; 
+            }
+        }
+
+        .fifth-exp{
+            top: 5px;
+            right: 10px;
+            p {
+                margin-top: 5px; 
+            }
+        }
+    }
+
+    .footer {
+        .nav-title {
+            display:none;
+        }
+        .column {
+            display:none;
+        }
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    .teachers {
+        h3 {
+            @include font($burnt-seed, 700, 22px);
+            margin: 40px 0 60px 0;
+        }
+
+        p {
+            @include font($burnt-seed, 600, 16px); 
+        }
+        
+        .name {
+            width: 100%;
+            margin: 0 0 10px 0;
+        }
+    }
+
+    .footer {
+        position: relative;
+        padding-top: 40px;
+
+        .first-phone-smile {
+            width: auto;
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            top: -50px;
+            right: 15%;
+        }
+
+        .second-phone-smile {
+            width: auto;
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            top: 70px;
+            right: 10%;
+        }
+
+
+        .footer-titles {
+            @include font($burnt-seed, 600, 16px);
+
+        }
+
+        .voice-title {
+            display:none;
+        }
+
+        .con-title {
+            order: -1;
+        }
+
+        .socials {
+            margin-top: 190px ;
+            padding-bottom: 50px;
+            .social {
+                align-items: center;
+                margin-bottom: 25px;
+            }
+        }
+
+        .contacts {
+            order: -1;
+            margin-top: -150px;
+            p {
+                @include font($burnt-seed, 400, 14px);
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .teachers {
+        .face-photo{
+            width: 300px;
+            height: auto;
+        }
+        a {
+            width: 292px;
+        }
+
+        .fourth-exp{
+            left: 34px;
+        }
+
+        .fifth-exp{
+            top: 8px;
+            left: 15px;
+            p {
+                margin-top: 8px; 
+            }
+        }
+    }
+}
 

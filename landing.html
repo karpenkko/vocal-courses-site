@@ -8,9 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <!-- <style>
-
-        </style> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="main-img" id="main">
@@ -30,9 +28,11 @@
                         </ul>
                     </div>
                     <div class="number">
-                        <a href="#">дзвякнути</a> 
+                        <a class="call" href="#">дзвякнути</a>
                         <img class="phone-icon" src="images/phone-icon.png">
-                        <img class="arrow" src="images/phone-arrow.png">
+                        <img class="arrow" src="images/arrow.png">
+                        <a class="menu-a" href="#"><img class="menu-icon" src="images/menu.png"> </a>
+                        <img class="phone-arrow" src="images/phone-arrow.png">
                     </div>
                 </div> 
                 <div class="central-area">
@@ -45,6 +45,7 @@
                     <div class="cta">
                         <a href="#free-lesson">спробувати безкоштовно</a>
                         <img src="images/button-line.png">
+                        <img class="phone" src="images/phone-button.png">
                     </div>
                 </div>  
             </div>
@@ -52,53 +53,65 @@
         <div class="second-block" id="for-whom">
             <div class="container">
                 <h3>Для кого</h3>
-                <div class="beginners">
-                    <img class="begin-vector" src="images/begin-vector.png">
-                    <img src="images/beginners.png">
-                    <p>Наші педагоги допоможуть вам впоратися зі страхом, а від вас знадобляться сформовані цілі. </p>
-                    <p>Після цього педагог розробить вам індивідуальний план занять і ви приступите до навчання.</p>
+                <div class="row justify-content-start">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="beginners">
+                            <img class="begin-vector" src="images/begin-vector.png">
+                            <img src="images/beginners.png">
+                            <p>Наші педагоги допоможуть вам впоратися зі страхом, а від вас знадобляться сформовані цілі. </p>
+                            <p>Після цього педагог розробить вам індивідуальний план занять і ви приступите до навчання.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="amateurs">
-                    <img class="amat-vector" src="images/amat-vector.png">
-                    <img src="images/amateurs.png">
-                    <p>На аматорському етапі ви навчитесь співати у різних жанрах.</p>
-                    <p>Освоїте різноманітні вокальні техніки та зможете сформувати свою власну манеру виконання.</p>
+                <div class="row justify-content-end">
+                    <div class="col-lg-6 col-md-12 col-sm-7">
+                        <div class="amateurs">
+                            <img class="amat-vector" src="images/amat-vector.png">
+                            <img src="images/amateurs.png">
+                            <p>На аматорському етапі ви навчитесь співати у різних жанрах.</p>
+                            <p>Освоїте різноманітні вокальні техніки та зможете сформувати свою власну манеру виконання.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="professional">
-                    <img class="profi-vector" src="images/profi-vector.png">
-                    <img src="images/proffesional.png">
-                    <p>Навіть якщо ви давно займаєтесь вокалом , вам буде чому повчитися у наших педагогів.</p>
-                    <p>Вони допоможуть вам оволодіти професійною вокальною технікою, створити сценічний образ та  підготуватися до конкурсів.</p>
+                <div class="row justify-content-start">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="professional">
+                            <img class="profi-vector" src="images/profi-vector.png">
+                            <img src="images/proffesional.png">
+                            <p>Навіть якщо ви давно займаєтесь вокалом , вам буде чому повчитися у наших педагогів.</p>
+                            <p>Вони допоможуть вам оволодіти професійною вокальною технікою, створити сценічний образ та  підготуватися до конкурсів.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="container" id="lessons">
             <div class="third-title">
-                <h3>під час навчання ви</h3>
+                <h3>під час навчання</h3>
                 <img class="smile" src="images/smile.png">
             </div>
             <div class="skills">
                 <div class="row justify-content-start">
-                    <div class="col-6" >
+                    <div class="col-md-6 col-sm-12 col-12" >
                         <div class id="first-skill-block">
                             <p class="first-skill">Навчитесь дихати діафрагмою. Освоїте дихальну гімнастику.</p>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-md-5 col-sm-12">
                         <div class id="second-skill-block">
                             <p class="second-skill">Позбудетесь ознак сценічного хвилювання.</p>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-end">
-                    <div class="col-6">
+                    <div class="col-md-6 col-sm-12">
                         <div class id="third-skill-block">
                             <p class="third-skill">Розвинете слух, вокальний діапазон та почуття ритму.</p>
                         </div>
                     </div>
-                    <div class="col-5">
-                        <div class id="first-skill-block">
-                            <p class="first-skill">Навчитесь гарно співати у різних музичних жанрах.</p>
+                    <div class="col-md-5 col-sm-12">
+                        <div class id="fourth-skill-block">
+                            <p class="fourth-skill">Навчитесь гарно співати у різних музичних жанрах.</p>
                         </div>
                     </div>
                 </div>
@@ -108,7 +121,7 @@
             <div class="container">
                 <h3>безкоштовний пробний урок</h3>
                 <div class="row justify-content-start">
-                    <div class="col-6 step">
+                    <div class="col-lg-6 col-md-8 col-sm-7 col-10 step step1">
                         <p class="step-name">знайомство з педагогом</p>
                         <p class="step-description">Ви розповісте про свій досвід занять музикою [якщо він був], про результати, які хочете отримати, а також про цілі, яких прагнете досягти.</p>
                         <img class="step-number" src="images/1.png">
@@ -116,7 +129,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-end">
-                    <div class="col-6 step">
+                    <div class="col-lg-6 col-md-8 col-sm-7 col-10 step step2">
                         <p class="step-name">прослуховування</p>
                         <p class="step-description">Коротке прослуховування визначить вашу зону розвитку на найближчі кілька місяців.</p>
                         <img class="step-number" src="images/2.png">
@@ -125,7 +138,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-start">
-                    <div class="col-6 step">
+                    <div class="col-lg-6 col-md-8 col-sm-7 col-10 step step3">
                         <p class="step-name">питання & відповідь</p>
                         <p class="step-description">Ви можете запитати педагога про те, що вас цікавить і отримати докладні відповіді. Чим більше буде питань, тим точніше викладач зможе вибудувати навчальний процес.</p>
                         <img class="step-number" src="images/3.png">
@@ -133,15 +146,15 @@
                     </div>
                 </div>
                 <div class="row justify-content-end">
-                    <div class="col-6 step">
+                    <div class="col-lg-6 col-md-8 col-sm-7 col-10 step step4">
                         <p class="step-name">розробка програми</p>
                         <p class="step-description">Педагог запропонує вам індивідуальну програму навчання, яка враховуватиме ваші цілі та нинішній рівень.</p>
                         <img class="step-number" src="images/4.png">
                     </div>
                 </div>
                 <div class="row justify-content-end">
-                    <div class="col-7 free-lesson-button">
-                        <a href="#application-popup">записатись на пробний урок</a>
+                    <div class="col-xl-7 col-lg-9 col-sm-12 free-lesson-button">
+                        <a href="#application-popup">записатись<span>на пробний урок</span></a>
                         <img src="images/button-arrow.png">
                     </div>
                 </div>
@@ -200,33 +213,41 @@
         <div class="prices">
             <div class="container">
                 <h3>ціни</h3>
-                <div class="first-tariff">
-                    <p class="price-title">разове заняття</p>
-                    <div class="price-value">
-                        <p class="price">270</p>
-                        <img src="images/hrn1.png">
+                <div class="row justify-content-end">
+                    <div class="col-lg-11 col-md-12 first-tariff">
+                        <p class="price-title">разове заняття</p>
+                        <div class="price-value">
+                            <p class="price">270</p>
+                            <img src="images/hrn1.png">
+                        </div>
                     </div>
                 </div>
-                <div class="first-tariff">
-                    <p class="price-title">1 місяць [4 заняття]</p>
-                    <div class="price-value">
-                        <p class="price">990</p>
-                        <img src="images/hrn2.png">
+                <div class="row justify-content-end">
+                    <div class="col-lg-11 col-md-12 first-tariff">
+                        <p class="price-title">1 місяць [4 заняття]</p>
+                        <div class="price-value">
+                            <p class="price">990</p>
+                            <img src="images/hrn2.png">
+                        </div>
                     </div>
                 </div>
                 <img class="long-photo" src="images/long-photo.png">
-                <div class="third-tariff">
-                    <p class="price-title">2 місяці [8 занятть]</p>
-                    <div class="price-value">
-                        <p class="price">1890</p>
-                        <img src="images/hrn2.png">
+                <div class="row justify-content-end">
+                    <div class="col-xl-7 col-lg-8 col-md-10 third-tariff">
+                        <p class="price-title">2 місяці [8 занятть]</p>
+                        <div class="price-value">
+                            <p class="price">1890</p>
+                            <img src="images/hrn2.png">
+                        </div>
                     </div>
                 </div>
-                <div class="fourth-tariff">
-                    <p class="price-title">3 місяці [12 занятть]</p>
-                    <div class="price-value">
-                        <p class="price">2790</p>
-                        <img src="images/hrn1.png">
+                <div class="row justify-content-end">
+                    <div class="col-xl-7 col-lg-8 col-md-10 fourth-tariff">
+                        <p class="price-title">3 місяці [12 занятть]</p>
+                        <div class="price-value">
+                            <p class="price">2790</p>
+                            <img src="images/hrn1.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -234,8 +255,8 @@
         <div class="teachers" id="teachers">
             <div class="container">
                 <h3>викладачі</h3>
-                <div class="row">
-                    <div class="col-sm-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-sm-8 col-12">
                         <p class="name">Оберемченко Ростислав</p>
                         <div class="first-face">
                             <img class="face-photo" src="images/rostislav.png">
@@ -245,7 +266,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4 col-sm-8 col-12 second-teacher">
+                        <p class="extre-name">Худченко Єва</p>
                         <div class="second-face">
                             <img class="face-photo" src="images/eva.png">
                             <div class="experience second-exp">
@@ -255,7 +277,7 @@
                         </div>
                         <p class="name">Худченко Єва</p>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4 col-sm-8 col-12">
                         <p class="name">Шумейко Анастасія</p>
                         <div class="third-face">
                             <img class="face-photo" src="images/nastia.png">
@@ -267,8 +289,8 @@
                     </div>
                 </div>
                 <div class="row justify-content-end">
-                    <div class="col-7 teachers-button">
-                        <a href="teachers.html">глянути більше та детальніше</a>
+                    <div class="col-xl-7 col-lg-9 col-sm-12 teachers-button">
+                        <a href="teachers.html">глянути <span>більше та детальніше</span></a>
                         <img src="images/white-button-arrow.png">
                     </div>
                 </div>
@@ -301,10 +323,10 @@
                     <div class="col-10 application ">
                         <h4>Залиште свої контакти і наш менеджер зателефонує вам</h4>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-xl-6 col-lg-5">
                                 <img class="deformed-smile" src="images/deformed-smile.png">
                             </div>
-                            <div class="col-6">
+                            <div class="col-xl-6 col-lg-7">
                                 <div class="form">
                                     <input type="text" placeholder="ім'я">
                                     <input type="text" placeholder="телефон">
@@ -319,35 +341,35 @@
         <div class="footer">
             <div class="container">
                 <div class="row footer-titles">
-                    <div class="col-6 ">
+                    <div class="col-lg-6 col-md-9 voice-title">
                         <p>voice</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-3 con-title">
                         <p>контакти</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 nav-title">
                         <p>навігація</p>
                     </div>
                 </div>
                 <div class="row socials">
-                    <div class="col-2 social footer-titles">
+                    <div class="col-lg-2 col-md-3 col-6 social footer-titles">
                         <p>instagram</p>
                         <img src="images/inst-line.png">
                     </div>
-                    <div class="col-2 social footer-titles">
+                    <div class="col-lg-2 col-md-3 col-6 social footer-titles">
                         <p>facebook</p>
                         <img src="images/face-line.png">
                     </div>
-                    <div class="col-2 social footer-titles">
+                    <div class="col-lg-2 col-md-3 col-12 social footer-titles">
                         <p>twitter</p>
                         <img src="images/twi-line.png">
                     </div>
-                    <div class="col-3 contacts">
+                    <div class="col-lg-3 col-md-3 col-12 contacts">
                         <p>voiсe@gmail.com</p>
                         <p>+380972397041</p>
                         <p>вул. Київська 47</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3">
                         <div class="row navigation">
                             <div class="col-6 column">
                                 <a href="#main">головна</a>
@@ -362,6 +384,8 @@
                         </div>
                     </div>
                 </div>
+                <img class="first-phone-smile" src="images/1-phone-smile.png">
+                <img class="second-phone-smile" src="images/2-phone-smile.png">
             </div>
         </div>
     </body>

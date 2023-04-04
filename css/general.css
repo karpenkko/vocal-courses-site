@@ -9,7 +9,7 @@ body {
 }
 
 .main-img {
-  background: url(/css/images/main-img.png) 0 0/100% no-repeat;
+  background: url("../images/bg/main-img.png") center/cover no-repeat;
   background-position: center top;
 }
 
@@ -50,13 +50,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .header a {
   text-decoration: none;
   font-weight: 500;
-  margin-right: 10px;
   color: #F0F0F0;
 }
 .header .number {
@@ -67,6 +67,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 .header .phone-icon {
   height: 32px;
@@ -75,6 +78,14 @@ body {
   position: absolute;
   top: 90px;
   right: 100px;
+}
+.header .menu-a {
+  display: none;
+}
+.header .phone-arrow {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .main-text h1 {
@@ -125,9 +136,14 @@ body {
   bottom: 100px;
   right: 15px;
 }
+.cta .phone {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
 
 .second-block {
-  background: url(/css/images/black-bg.png) 0 0/100% no-repeat;
+  background: url("../images/bg/black-bg.png") 0 0/100% no-repeat;
   background-position: center bottom;
 }
 .second-block img {
@@ -154,7 +170,7 @@ h3 {
 .beginners {
   width: 490px;
   margin-top: 90px;
-  margin-left: 100px;
+  margin-left: 12%;
   position: relative;
 }
 .beginners p {
@@ -169,7 +185,7 @@ h3 {
 .amateurs {
   width: 490px;
   margin-top: 20px;
-  margin-left: 620px;
+  margin-left: 12%;
   position: relative;
 }
 .amateurs p {
@@ -184,7 +200,7 @@ h3 {
 .professional {
   width: 490px;
   margin-top: 100px;
-  margin-left: 200px;
+  margin-left: 24%;
   position: relative;
   padding-bottom: 220px;
 }
@@ -231,23 +247,32 @@ h3 {
   border: 4px;
   border-color: #090909;
   border-style: solid;
-  height: 108px;
+  height: 100px;
   margin-top: 24px;
 }
 .skills #second-skill-block .second-skill {
   width: 305px;
-  padding: 30px 0 0 44px;
+  padding: 26px 0 0 44px;
 }
 .skills #third-skill-block {
   color: #F0F0F0;
   border: 4px;
   border-color: #090909;
   border-style: solid;
-  height: 108px;
+  height: 100px;
   margin-top: 24px;
 }
 .skills #third-skill-block .third-skill {
   width: 380px;
+  padding: 26px 0 0 44px;
+}
+.skills #fourth-skill-block {
+  background-color: #F0F0F0;
+  height: 108px;
+  margin-top: 24px;
+}
+.skills #fourth-skill-block .fourth-skill {
+  width: 350px;
   padding: 30px 0 0 44px;
 }
 
@@ -279,7 +304,7 @@ h3 {
 }
 .free-lesson .step .fourth-img {
   position: absolute;
-  left: 70px;
+  right: 40px;
   bottom: -140px;
 }
 .free-lesson h3 {
@@ -290,16 +315,19 @@ h3 {
   color: #090909;
   font-weight: 600;
   font-size: 24px;
+  width: 480px;
   text-transform: uppercase;
-  margin: 0 0 20px 100px;
+  margin-bottom: 20px;
+  margin-left: 15%;
   position: relative;
 }
 .free-lesson .step-description {
   color: #090909;
   font-weight: 400;
   font-size: 16px;
-  width: 400px;
-  margin: 0 0 30px 188px;
+  width: 376px;
+  margin-bottom: 30px;
+  margin-left: 25%;
 }
 
 .free-lesson-button {
@@ -324,14 +352,17 @@ h3 {
 }
 
 .prices {
-  background: url(/css/images/price-bg.png) 0 0/100% no-repeat;
+  background: url("../images/bg/price-bg.png") 0 0/100% no-repeat;
   background-position: center bottom;
   position: relative;
 }
 .prices .long-photo {
+  height: 340px;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
-  bottom: 360px;
+  top: 400px;
   left: 0;
 }
 .prices h3 {
@@ -348,7 +379,7 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 0 35px 100px;
+  margin: 0 0 35px 0;
 }
 .prices .third-tariff {
   display: -webkit-box;
@@ -361,7 +392,7 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 360px 0 35px 500px;
+  margin: 360px 0 35px 0;
 }
 .prices .fourth-tariff {
   display: -webkit-box;
@@ -374,7 +405,7 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 0 0 500px;
+  margin: 0;
   padding-bottom: 170px;
 }
 .prices .price-title {
@@ -413,6 +444,15 @@ h3 {
 .teachers .name {
   text-transform: uppercase;
   margin: 10px 0;
+}
+.teachers .extre-name {
+  text-transform: uppercase;
+  margin: 10px 0;
+  display: block;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
 }
 .teachers .face-photo {
   width: 100%;
@@ -576,7 +616,7 @@ h3 {
   padding-bottom: 80px;
   padding-left: 10%;
   padding-right: 10%;
-  background: url(/css/images/main-img.png) 0 0/100% no-repeat;
+  background: url("../images/bg/main-img.png") center/cover no-repeat;
   background-position: center top;
 }
 .application .deformed-smile {
@@ -591,7 +631,6 @@ h4 {
   font-size: 24px;
   text-transform: uppercase;
   line-height: 1.6;
-  width: 715px;
   margin-bottom: 60px;
 }
 
@@ -849,4 +888,814 @@ h4 {
   margin-top: 15px;
   text-decoration: none;
   display: block;
+}
+.footer .first-phone-smile {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+.footer .second-phone-smile {
+  width: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (max-width: 1200px) {
+  .main-img .header ul {
+    width: 640px;
+  }
+  .main-img .main-text h1 {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 48px;
+    width: 920px;
+  }
+  .main-img .subtitle-text h2 {
+    color: #F0F0F0;
+    font-weight: 500;
+    font-size: 20px;
+    width: 600px;
+  }
+  .main-img .cta a {
+    color: #F0F0F0;
+    font-weight: 600;
+    font-size: 24px;
+    bottom: 175px;
+    right: 90px;
+  }
+  .main-img .cta img {
+    bottom: 130px;
+    right: 0px;
+  }
+  .second-block img {
+    margin-bottom: 30px;
+  }
+  .second-block .beginners {
+    width: 490px;
+    margin-top: 90px;
+    margin-left: 0px;
+    position: relative;
+  }
+  .second-block .amateurs {
+    width: 490px;
+    margin-top: 60px;
+    margin-left: 0px;
+    position: relative;
+  }
+  .second-block .professional {
+    width: 490px;
+    margin-top: 100px;
+    margin-left: 12%;
+    position: relative;
+  }
+  .skills #fourth-skill-block .fourth-skill {
+    width: 275px;
+  }
+  .teachers .name {
+    width: 178px;
+  }
+  .reviews .people-rev {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .reviews .second-rev {
+    margin-top: -20px;
+    margin-right: -140px;
+    margin-left: 0;
+  }
+  .reviews .third-rev {
+    margin-top: -20px;
+    margin-left: 0px;
+  }
+}
+@media (max-width: 992px) {
+  .main-img .header .menu {
+    display: none;
+  }
+  .main-img .header .number .call {
+    display: none;
+  }
+  .main-img .header .number .phone-icon {
+    display: none;
+  }
+  .main-img .header .number .arrow {
+    display: none;
+  }
+  .main-img .header .number .menu-a {
+    display: contents;
+  }
+  .main-img .header .number .phone-arrow {
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top: 65px;
+    right: 90px;
+  }
+  .main-img .central-area {
+    height: 500px;
+  }
+  .main-img .main-text h1 {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 36px;
+    width: 700px;
+  }
+  .main-img .subtitle-text h2 {
+    color: #F0F0F0;
+    font-weight: 500;
+    font-size: 20px;
+    width: 600px;
+  }
+  .main-img .cta a {
+    color: #F0F0F0;
+    font-weight: 600;
+    font-size: 24px;
+    bottom: 135px;
+    right: 90px;
+  }
+  .main-img .cta img {
+    bottom: 90px;
+    right: 0px;
+  }
+  .second-block img {
+    margin-bottom: 30px;
+  }
+  .second-block .beginners {
+    width: 490px;
+    margin-top: 80px;
+    margin-left: 0px;
+    position: relative;
+  }
+  .second-block .beginners .begin-vector {
+    position: absolute;
+    top: -60px;
+    left: 600px;
+  }
+  .second-block .amateurs {
+    width: 490px;
+    margin-top: 100px;
+    margin-left: 30%;
+    position: relative;
+  }
+  .second-block .amateurs .amat-vector {
+    position: absolute;
+    top: 100px;
+    left: -240px;
+  }
+  .second-block .professional {
+    width: 490px;
+    margin-top: 100px;
+    margin-left: 8%;
+    position: relative;
+    padding-bottom: 160px;
+  }
+  .second-block .professional .profi-vector {
+    position: absolute;
+    top: 70px;
+    left: 560px;
+  }
+  .third-title .smile {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .skills {
+    color: #090909;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .skills #first-skill-block .first-skill {
+    width: 350px;
+    padding: 33px 0 0 30px;
+  }
+  .skills #second-skill-block .second-skill {
+    width: 260px;
+    padding: 29px 0 0 30px;
+  }
+  .skills #third-skill-block .third-skill {
+    width: 320px;
+    padding: 29px 0 0 30px;
+  }
+  .skills #fourth-skill-block .fourth-skill {
+    width: 270px;
+    padding: 33px 0 0 30px;
+  }
+  .free-lesson h3 {
+    width: 600px;
+  }
+  .free-lesson .step-description {
+    margin-bottom: 100px;
+  }
+  .free-lesson .step .first-img {
+    width: 100px;
+    top: -440px;
+    left: 350px;
+  }
+  .free-lesson .step .second-img {
+    bottom: -80px;
+    left: -30px;
+  }
+  .free-lesson .step .third-img {
+    bottom: -100px;
+    left: 300px;
+  }
+  .free-lesson .step .fourth-img {
+    width: 400px;
+    right: 200px;
+    bottom: -180px;
+  }
+  .free-lesson .free-lesson-button {
+    margin: 40px 0 100px 0;
+  }
+  .teachers .experience img {
+    width: 70px;
+  }
+  .teachers .first-exp {
+    bottom: 0px;
+  }
+  .reviews img {
+    position: absolute;
+    top: -200px;
+    right: 160px;
+  }
+  .contact h4 {
+    width: 430px;
+  }
+  .contact .deformed-smile {
+    width: 100px;
+    top: 150px;
+    left: 70%;
+  }
+  .footer .nav-title {
+    display: none;
+  }
+  .footer .column {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .main-img .main-text h1 {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 32px;
+    width: 540px;
+  }
+  .main-img .subtitle-text h2 {
+    color: #F0F0F0;
+    font-weight: 500;
+    font-size: 18px;
+    width: 500px;
+  }
+  h3 {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 22px;
+    margin-top: 80px;
+  }
+  .second-block p {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 10px 0 0 0;
+  }
+  .second-block img {
+    margin-bottom: 10px;
+  }
+  .second-block .beginners {
+    width: 490px;
+    margin-top: 60px;
+    margin-left: 0px;
+    position: relative;
+  }
+  .second-block .beginners img {
+    width: 215px;
+  }
+  .second-block .beginners p {
+    width: 288px;
+  }
+  .second-block .beginners .begin-vector {
+    position: absolute;
+    top: -110px;
+    left: 400px;
+    width: 60px;
+  }
+  .second-block .amateurs {
+    width: 490px;
+    margin-top: 50px;
+    margin-left: 15% px;
+    position: relative;
+  }
+  .second-block .amateurs img {
+    width: 191px;
+  }
+  .second-block .amateurs p {
+    width: 266px;
+  }
+  .second-block .amateurs .amat-vector {
+    position: absolute;
+    top: 76px;
+    left: -200px;
+    width: 66px;
+  }
+  .second-block .professional {
+    width: 490px;
+    margin-top: 60px;
+    margin-left: 0px;
+    position: relative;
+    padding-bottom: 140px;
+  }
+  .second-block .professional img {
+    width: 222px;
+  }
+  .second-block .professional p {
+    width: 307px;
+  }
+  .second-block .professional .profi-vector {
+    position: absolute;
+    top: 100px;
+    left: 380px;
+    width: 60px;
+  }
+  .third-title h3 {
+    margin-bottom: 0;
+  }
+  .third-title .smile {
+    width: 50px;
+    top: 110px;
+    left: 380px;
+  }
+  .skills {
+    color: #090909;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .skills #first-skill-block {
+    color: #F0F0F0;
+    border: 4px;
+    border-color: #090909;
+    border-style: solid;
+    height: 72px;
+    margin-top: 60px;
+    background-color: #CB1C18;
+  }
+  .skills #first-skill-block .first-skill {
+    width: 285px;
+    padding: 15px 0 0 20px;
+  }
+  .skills #second-skill-block {
+    background-color: #F0F0F0;
+    height: 80px;
+    margin-top: 40px;
+    border: none;
+    color: #090909;
+  }
+  .skills #second-skill-block .second-skill {
+    width: 270px;
+    padding: 19px 0 0 20px;
+  }
+  .skills #third-skill-block {
+    color: #F0F0F0;
+    border: 4px;
+    border-color: #090909;
+    border-style: solid;
+    height: 72px;
+    margin-top: 40px;
+  }
+  .skills #third-skill-block .third-skill {
+    width: 290px;
+    padding: 15px 0 0 20px;
+  }
+  .skills #fourth-skill-block {
+    background-color: #F0F0F0;
+    height: 80px;
+    margin-top: 40px;
+  }
+  .skills #fourth-skill-block .fourth-skill {
+    width: 246px;
+    padding: 19px 0 0 20px;
+  }
+  .free-lesson {
+    margin-top: 80px;
+  }
+  .free-lesson .step .step-number {
+    top: -70px;
+    left: 20px;
+  }
+  .free-lesson .step .first-img {
+    width: 80px;
+    top: -420px;
+    left: 200px;
+  }
+  .free-lesson .step .second-img {
+    width: 200px;
+    bottom: -80px;
+    left: 0px;
+  }
+  .free-lesson .step .third-img {
+    bottom: -100px;
+    left: 200px;
+  }
+  .free-lesson .step .fourth-img {
+    width: 400px;
+    right: 100px;
+    bottom: -180px;
+  }
+  .free-lesson h3 {
+    width: 300px;
+  }
+  .free-lesson .step-name {
+    color: #090909;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 0;
+  }
+  .free-lesson .step-description {
+    color: #090909;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 160px;
+    margin-left: 15%;
+  }
+  .free-lesson .step1 .step-name {
+    width: 180px;
+  }
+  .free-lesson .step1 .step-description {
+    width: 260px;
+  }
+  .free-lesson .step2 .step-description {
+    width: 236px;
+  }
+  .free-lesson .step3 .step-description {
+    width: 286px;
+  }
+  .free-lesson .step4 .step-description {
+    width: 200px;
+    margin-bottom: 0px;
+  }
+  .free-lesson .free-lesson-button {
+    width: 98%;
+    border: 4px;
+    border-color: #CB1C18;
+    border-style: solid;
+    height: 70px;
+    padding: 7px 0 0 40px;
+    margin: 70px 0 80px 0;
+    position: relative;
+  }
+  .free-lesson .free-lesson-button a {
+    text-decoration: none;
+    color: #090909;
+    font-weight: 600;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 140px;
+    line-height: 2.6;
+  }
+  .free-lesson .free-lesson-button a span {
+    color: #F0F0F0;
+  }
+  .free-lesson .free-lesson-button img {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+  }
+  .prices h3 {
+    margin-bottom: 60px;
+  }
+  .prices .price-title {
+    width: 360px;
+    color: #F0F0F0;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .prices .price-value {
+    color: #CB1C18;
+    font-weight: 700;
+    font-size: 26px;
+  }
+  .prices img {
+    width: 50px;
+  }
+  .prices .first-tariff {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 0 30px 0;
+  }
+  .prices .third-tariff {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 230px 0 30px 0;
+  }
+  .prices .fourth-tariff {
+    padding-bottom: 120px;
+  }
+  .prices .long-photo {
+    height: 280px;
+    top: 250px;
+  }
+  .teachers h3 {
+    margin: 50px 0 0 0;
+  }
+  .teachers p {
+    color: #F0F0F0;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .teachers .name {
+    width: 100%;
+    margin: 60px 0 10px 0;
+  }
+  .teachers .extre-name {
+    margin: 60px 0 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+  .teachers .second-teacher .name {
+    margin: 0;
+    display: block;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .teachers .teachers-button {
+    border: 4px;
+    border-color: #090909;
+    border-style: solid;
+    width: 98%;
+    height: 70px;
+    padding: 7px 0 0 40px;
+    margin: 70px 0 80px 0;
+    position: relative;
+  }
+  .teachers .teachers-button a {
+    text-decoration: none;
+    color: #F0F0F0;
+    font-weight: 600;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 140px;
+    line-height: 2.6;
+  }
+  .teachers .teachers-button a span {
+    color: #CB1C18;
+  }
+  .teachers .teachers-button img {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+  }
+  .reviews h3 {
+    margin: 80px 0 60px 0;
+  }
+  .reviews img {
+    width: 130px;
+    top: -120px;
+    right: 80px;
+  }
+  .reviews p {
+    color: #090909;
+    font-weight: 400;
+    font-size: 14px;
+    border: 4px;
+    border-color: #CB1C18;
+    border-style: solid;
+    width: 265px;
+    padding: 40px 20px 40px 20px;
+    margin-top: -4px;
+  }
+  .reviews .rev-name {
+    color: #090909;
+    font-weight: 700;
+    font-size: 16px;
+    width: 285px;
+    padding: 20px 0 16px 20px;
+  }
+  .reviews .people-rev {
+    padding-bottom: 80px;
+  }
+  .contact .deformed-smile {
+    width: 0px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .contact .application {
+    padding-top: 60px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .contact h4 {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 16px;
+    width: 280px;
+    margin-bottom: 80px;
+  }
+  .contact .form input {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .contact .form ::-webkit-input-placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .contact .form ::-moz-placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .contact .form :-ms-input-placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .contact .form ::-ms-input-placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .contact .form ::placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .footer {
+    position: relative;
+    padding-top: 40px;
+  }
+  .footer .first-phone-smile {
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top: -50px;
+    right: 15%;
+  }
+  .footer .second-phone-smile {
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top: 70px;
+    right: 10%;
+  }
+  .footer .footer-titles {
+    color: #F0F0F0;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .footer .voice-title {
+    display: none;
+  }
+  .footer .con-title {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .footer .socials {
+    margin-top: 190px;
+    padding-bottom: 50px;
+  }
+  .footer .socials .social {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 25px;
+  }
+  .footer .contacts {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin-top: -150px;
+  }
+  .footer .contacts p {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .main-img .central-area {
+    height: 450px;
+  }
+  .main-img .main-text h1 {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 18px;
+    width: 280px;
+  }
+  .main-img .subtitle-text h2 {
+    color: #F0F0F0;
+    font-weight: 500;
+    font-size: 16px;
+    width: 280px;
+  }
+  .main-img .cta a {
+    color: #F0F0F0;
+    font-weight: 500;
+    font-size: 17px;
+    bottom: 115px;
+    right: 25px;
+  }
+  .main-img .cta img {
+    width: 0px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .main-img .cta .phone {
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    bottom: 80px;
+  }
+  .second-block .beginners .begin-vector {
+    position: absolute;
+    top: -110px;
+    left: 250px;
+  }
+  .second-block .amateurs .amat-vector {
+    position: absolute;
+    top: 76px;
+    left: -107px;
+  }
+  .second-block .professional .profi-vector {
+    position: absolute;
+    top: 235px;
+    left: 265px;
+  }
+  .third-title .smile {
+    left: 200px;
+  }
+  .free-lesson .step .first-img {
+    width: 66px;
+  }
+  .free-lesson .step .second-img {
+    width: 166px;
+    left: 220px;
+    bottom: 60px;
+  }
+  .free-lesson .step .third-img {
+    width: 70px;
+    bottom: 50px;
+    left: 20px;
+  }
+  .free-lesson .step .fourth-img {
+    width: 250px;
+    right: 100px;
+    bottom: 90px;
+  }
+  .prices .long-photo {
+    top: 270px;
+  }
+  .teachers .face-photo {
+    width: 300px;
+    height: auto;
+  }
+  .reviews img {
+    right: 60px;
+  }
+  .reviews .people-rev {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+  }
+  .reviews .people-rev .second-rev {
+    margin-right: -30px;
+  }
 }
