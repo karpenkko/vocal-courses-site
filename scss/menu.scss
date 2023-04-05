@@ -1,0 +1,76 @@
+$titanium-white: #F0F0F0;
+$burnt-seed: #090909;
+$dark-red: #CB1C18;
+
+@mixin font ($color, $weight, $size) {
+    color: $color;
+    font-weight: $weight;
+    font-size: $size;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: $dark-red;
+    
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    height: 105px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+    .logo{
+        @include font($titanium-white, 700, 18px);
+        text-transform: uppercase;
+        width: 80px;
+        display: flex;
+    }  
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 40px;
+
+
+    p {
+        @include font($titanium-white, 700, 22px); 
+        text-transform: uppercase;
+    }
+
+    img {
+        margin-left: 30px;
+    }
+}
+
+.number {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+
+    p {
+        @include font($titanium-white, 500, 20px); 
+    }
+
+    img {
+        width: 15px;
+        margin-left: 10px;
+    }
+}

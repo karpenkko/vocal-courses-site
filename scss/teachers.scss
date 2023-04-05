@@ -17,6 +17,7 @@ $dark-red: #CB1C18;
 body {
     font-family: Unbounded;
     background-color: $titanium-white;
+    position: relative;
 }
 
 *{
@@ -52,12 +53,6 @@ h3 {
         text-decoration: none;
         @include border($burnt-seed);
         padding: 9px 40px 13px 40px;
-    }
-
-    .menu-a {
-        width: 0px;
-        opacity: 0;
-        visibility: hidden;
     }
     
 }
@@ -346,22 +341,6 @@ h3 {
 }
 
 @media (max-width: 992px) {
-    .header {
-        .back-button{
-            .button {
-                display: none;
-            }
-
-            .menu-a {
-                width: auto;
-                opacity: 1;
-                visibility: visible;
-                margin-right: 10px;
-            }
-            
-        }
-
-    }
 
     .teachers {
         .experience {
@@ -399,9 +378,67 @@ h3 {
 
     }
 
+    .popup {
+        flex-wrap: wrap;
+        overflow: scroll;
+        .content {
+            flex-direction: column;
+
+            .photo {
+                display: flex;
+                justify-content: center;
+                margin-right: 0px;
+                margin-bottom: 20px; 
+                img {
+                    height: 350px;
+                    width: 240px;
+                    object-fit: cover;
+                }
+            }
+
+            .information {    
+                .name-exp{
+                    @include font($titanium-white, 600, 17px);
+    
+                    .experience{
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: 20px;
+    
+                        p {
+                            text-transform: lowercase;
+                            width: 40px;
+                            margin: 15px 50px 0 0;
+                        }
+                    }
+                }
+    
+                .info {
+    
+                    p {
+                        @include font($titanium-white, 400, 14px);
+                        width: 100%;
+                        margin-top: 20px;
+                    }
+                }
+           }
+        }
+ 
+    }
+
+
 }
 
 @media (max-width: 768px) {
+    .header {
+        .button {
+            @include font($burnt-seed, 500, 14px);
+            text-decoration: none;
+            @include border($burnt-seed);
+            padding: 5px 20px 9px 20px;
+        }
+    }
+
     .teachers {
         h3 {
             @include font($burnt-seed, 700, 22px);

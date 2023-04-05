@@ -1,6 +1,7 @@
 body {
   font-family: Unbounded;
   background-color: #F0F0F0;
+  position: relative;
 }
 
 * {
@@ -53,11 +54,6 @@ h3 {
   border-color: #090909;
   border-style: solid;
   padding: 9px 40px 13px 40px;
-}
-.header .menu-a {
-  width: 0px;
-  opacity: 0;
-  visibility: hidden;
 }
 
 .teachers {
@@ -384,15 +380,6 @@ h3 {
   }
 }
 @media (max-width: 992px) {
-  .header .back-button .button {
-    display: none;
-  }
-  .header .back-button .menu-a {
-    width: auto;
-    opacity: 1;
-    visibility: visible;
-    margin-right: 10px;
-  }
   .teachers .experience img {
     width: 70px;
   }
@@ -415,8 +402,72 @@ h3 {
   .footer .column {
     display: none;
   }
+  .popup {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: scroll;
+  }
+  .popup .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .popup .content .photo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .popup .content .photo img {
+    height: 350px;
+    width: 240px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .popup .content .information .name-exp {
+    color: #F0F0F0;
+    font-weight: 600;
+    font-size: 17px;
+  }
+  .popup .content .information .name-exp .experience {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 20px;
+  }
+  .popup .content .information .name-exp .experience p {
+    text-transform: lowercase;
+    width: 40px;
+    margin: 15px 50px 0 0;
+  }
+  .popup .content .information .info p {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 @media (max-width: 768px) {
+  .header .button {
+    color: #090909;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    border: 4px;
+    border-color: #090909;
+    border-style: solid;
+    padding: 5px 20px 9px 20px;
+  }
   .teachers h3 {
     color: #090909;
     font-weight: 700;

@@ -88,6 +88,100 @@ body {
   visibility: hidden;
 }
 
+.burger {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #CB1C18;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+}
+.burger:target {
+  opacity: 1;
+  visibility: visible;
+}
+.burger .container {
+  position: relative;
+  height: 100vh;
+}
+.burger .header-top {
+  height: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+.burger .header-top .logo {
+  color: #F0F0F0;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.burger .menu-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+.burger .menu-top a {
+  color: #F0F0F0;
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.burger .menu-top img {
+  margin-left: 30px;
+}
+.burger .number-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+}
+.burger .number-top p {
+  color: #F0F0F0;
+  font-weight: 500;
+  font-size: 20px;
+}
+.burger .number-top img {
+  width: 15px;
+  margin-left: 10px;
+}
+
 .main-text h1 {
   color: #F0F0F0;
   font-weight: 700;
@@ -776,7 +870,7 @@ h4 {
 #application-popup .popup-smile {
   position: absolute;
   top: 90px;
-  right: 16%;
+  right: 10%;
 }
 
 #popup-success h4 {
@@ -1113,6 +1207,20 @@ h4 {
   .free-lesson .free-lesson-button {
     margin: 40px 0 100px 0;
   }
+  #application-popup h4 {
+    margin-bottom: 80px;
+    width: 430px;
+  }
+  #application-popup .popup-smile {
+    width: 80px;
+    top: 160px;
+  }
+  #application-popup .form-col {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin-bottom: 60px;
+  }
   .teachers .experience img {
     width: 70px;
   }
@@ -1367,6 +1475,75 @@ h4 {
     position: absolute;
     top: 20px;
     right: 40px;
+  }
+  .inner-lesson-popup .cross {
+    top: 10px;
+    right: 0;
+  }
+  #application-popup h4 {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 16px;
+    max-width: 280px;
+    margin-bottom: 80px;
+  }
+  #application-popup .popup-smile {
+    width: 70px;
+    top: 170px;
+  }
+  #application-popup p {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+    width: 100%;
+  }
+  #application-popup .form-col {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin-bottom: 60px;
+  }
+  #application-popup .form input {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  #application-popup .form ::-webkit-input-placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  #application-popup .form ::-moz-placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  #application-popup .form :-ms-input-placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  #application-popup .form ::-ms-input-placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  #application-popup .form ::placeholder {
+    color: #F0F0F0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  #popup-success h4 {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0 0 60px 0;
+  }
+  #popup-fail h4 {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0 0 60px 0;
   }
   .prices h3 {
     margin-bottom: 60px;
@@ -1642,6 +1819,9 @@ h4 {
     visibility: visible;
     position: absolute;
     bottom: 80px;
+  }
+  .burger img {
+    margin-right: 10px;
   }
   .second-block .beginners .begin-vector {
     position: absolute;

@@ -53,12 +53,6 @@ h3 {
         @include border($titanium-white);
         padding: 9px 40px 13px 40px;
     }
-
-    .menu-a {
-        width: 0px;
-        opacity: 0;
-        visibility: hidden;
-    }
     
 }
 
@@ -282,7 +276,7 @@ h4 {
     .popup-smile {
         position: absolute;
         top: 90px;
-        right: 16%;
+        right: 10%;
     }
 }
 
@@ -324,22 +318,6 @@ h4 {
 
 
 @media (max-width: 992px) {
-    .header {
-        .back-button{
-            .button {
-                display: none;
-            }
-
-            .menu-a {
-                width: auto;
-                opacity: 1;
-                visibility: visible;
-                margin-right: 10px;
-            }
-            
-        }
-
-    }
 
     .content {
         .phone {
@@ -383,9 +361,33 @@ h4 {
     .line {
         margin: 60px 0;
     }
+
+    #application-popup {
+        h4 {
+            margin-bottom: 80px;
+            width: 430px;
+        }
+        .popup-smile {
+            width: 80px;
+            top: 160px;
+        }
+
+        .form-col {
+            order: -1;
+            margin-bottom: 60px;
+        }
+    }
 }
 
 @media (max-width: 768px) {
+    .header {
+        .button {
+            @include font($titanium-white, 500, 14px);
+            text-decoration: none;
+            @include border($titanium-white);
+            padding: 5px 20px 9px 20px;
+        }
+    }
 
     h3 {
         @include font($titanium-white, 700, 22px);
@@ -463,5 +465,68 @@ h4 {
 
     .line {
         margin: 50px 0;
+    }
+
+    .inner-lesson-popup {
+
+        .cross {
+            top: 10px;
+            right: 0;
+        }
+    }
+
+    #application-popup {
+        h4 {
+            @include font($titanium-white, 700, 16px);  
+            max-width: 280px;
+            margin-bottom: 80px;
+
+        }
+
+        .popup-smile {
+            width: 70px;
+            top: 170px;
+        }
+
+        p {
+            @include font($titanium-white, 400, 14px);
+            width: 100%;
+        }
+
+        .form-col {
+            order: -1;
+            margin-bottom: 60px;
+        }
+
+        .form {
+            input {
+                @include font($titanium-white, 400, 14px); 
+            }
+
+            ::placeholder {
+                @include font($titanium-white, 400, 14px); 
+            }
+        }
+
+
+
+
+    }
+
+    #popup-success{
+
+        h4 {
+            @include font($titanium-white, 700, 28px);
+            margin: 0 0 60px 0;
+        }
+    
+    }
+
+    #popup-fail {
+        h4 {
+            @include font($titanium-white, 700, 28px);
+            margin: 0 0 60px 0;
+        }
+
     }
 }
