@@ -1,3 +1,35 @@
+<?php
+    session_start();
+    $error_name = '';
+    $error_phone = '';
+    $error = false;
+    if(isset($_POST['send'])){
+        $name = htmlspecialchars($_POST['name']);
+        $phone = htmlspecialchars($_POST['phone']);
+        $_SESSION['name'] = $name;
+        $_SESSION['phone'] = $phone;
+
+        if(!preg_match('/^\p{L}+$/u', $name)) {
+            $error_name = 'введіть ім\'я коректно';
+            $error = true;
+        }
+
+        if(!ctype_digit($phone) || strlen($phone) != 10) {
+            $error_phone = 'введіть номер коректно';
+            $error = true;
+        }
+
+        if(!$error){
+            $file = "form.txt";
+            $current = file_get_contents($file);
+            $current .=$name.' '.$phone.' ';
+            file_put_contents($file, $current);
+            header('Location: #popup-success');
+        }
+    }
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -368,11 +400,13 @@
                                 <img class="deformed-smile" src="images/deformed-smile.png">
                             </div>
                             <div class="col-xl-6 col-lg-7">
-                                <div class="form">
-                                    <input type="text" placeholder="ім'я">
-                                    <input type="text" placeholder="телефон">
-                                    <a href="#popup-success">зателефонуйте мені</a>
-                                </div>
+                                <form class="form" action="" method="post">
+                                    <span><?=$error_name?></span>
+                                    <input type="text" name="name" placeholder="ім'я" value="<?=$_SESSION['name']?>">
+                                    <span><?=$error_phone?></span>
+                                    <input type="text" name="phone" placeholder="телефон" value="<?=$_SESSION['phone']?>">
+                                    <input class="button" type="submit" name="send" value="зателефонуйте мені">
+                                </form>
                             </div>
                         </div> 
                     </div>

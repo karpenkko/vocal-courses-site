@@ -697,19 +697,22 @@ h4 {
         margin-bottom: 20px;
     }
 
+    .button {
+        display: flex;
+        @include font($titanium-white, 600, 16px);
+        background-color: $burnt-seed;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 18px 0 18px 20px;
+        border: none;
+    }
+
     ::placeholder {
         @include font($titanium-white, 400, 16px); 
         font-family: Unbounded;
     }
 
-    a {
-        display: flex;
-        @include font($titanium-white, 600, 16px);
-        background-color: $burnt-seed;
-        text-transform: uppercase;
-        text-decoration: none; 
-        padding: 18px 0 18px 20px;
-    }
+
 
 }
 

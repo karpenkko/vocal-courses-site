@@ -753,6 +753,19 @@ h4 {
   padding: 18px 0 18px 20px;
   margin-bottom: 20px;
 }
+.form .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #F0F0F0;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #090909;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 18px 0 18px 20px;
+  border: none;
+}
 .form ::-webkit-input-placeholder {
   color: #F0F0F0;
   font-weight: 400;
@@ -782,18 +795,6 @@ h4 {
   font-weight: 400;
   font-size: 16px;
   font-family: Unbounded;
-}
-.form a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #F0F0F0;
-  font-weight: 600;
-  font-size: 16px;
-  background-color: #090909;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 18px 0 18px 20px;
 }
 
 .lesson-popup {
