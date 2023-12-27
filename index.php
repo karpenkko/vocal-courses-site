@@ -2,7 +2,7 @@
     $page = $_GET['page'];
     switch ($page) {
         case 'main':
-            header('Location: landing.php');
+            header('Location: landing.html');
             break;
         case 'contacts':
             header('Location: contacts.html');
