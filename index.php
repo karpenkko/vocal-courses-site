@@ -1,7 +1,7 @@
 <?php
     $page = $_GET['page'];
     switch ($page) {
-        case 'main':
+        case 'landing':
             header('Location: landing.html');
             break;
         case 'contacts':
